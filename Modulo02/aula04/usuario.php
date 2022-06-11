@@ -1,12 +1,17 @@
 <?php
 
-class Usuario 
+abstract class Usuario    // abstract não permite criação de classes iguais vindas dela
 {
     private string $nome;
     private string $email;
     private string $senha;
     private string $cpf;
 
+    public function __construct(string $email, string $senha)
+    {
+        $this->email = $email;
+        $this->senha = $senha;
+    }
 
     public function getNome(): string
     {

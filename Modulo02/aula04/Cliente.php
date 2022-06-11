@@ -1,8 +1,8 @@
 <?php
 
 declare(strict_types=1);
-
-class Cliente extends Usuario
+// a palavra final não permite a extensão de uma classe
+final class Cliente extends Usuario
 
 {
     private string $dataCadastro;
