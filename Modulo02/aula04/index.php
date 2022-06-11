@@ -2,7 +2,7 @@
 
 include 'Cliente.php';
 include 'Gestor.php';
-include 'usuario.php';
+include 'Usuario.php';
 
 $c1 = new Cliente();
 $c1->setNome('Chiquim');
