@@ -7,12 +7,12 @@ use App\Controller\ErrorController;
 use App\Controller\IndexController;
 use App\Controller\ProductController;
 
-$url = explode('?',$_SERVER['REQUEST_URI'][0]);
+$url = explode('?', $_SERVER['REQUEST_URI'])[0];
 
 function createRoute(string $controllerName, string $methodName){
     return [
-        'controller' => $controllerName,
-        'method'     => $methodName,
+        'controller'=> $controllerName,
+        'method'=> $methodName,
     ];
 }
 
@@ -22,7 +22,7 @@ $routes = [
     '/produtos/novo' =>createRoute(ProductController::class, 'addAction'),
 ];
 
-if (false === isset($routes[$url])){
+if(false === isset($routes[$url])){
     ( new ErrorController())->notFoundAction();
     exit;
 }

@@ -12,4 +12,3 @@ abstract class AbstractController
         
     }
 }
-$c->render('product/add');
