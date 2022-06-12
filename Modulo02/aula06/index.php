@@ -2,14 +2,24 @@
 
 include 'vendor/autoload.php';
 
-use Classes\Config\Usuario as UsuarioConfig;
-use Classes\Categoria;
+use Dompdf\Dompdf;
 
-//$us1 = new Classes\Usuario();
-$us2 = new UsuarioConfig();
+$html = '';
+for ($n = 0; $n < 10; $n++) {
+    $html .= 'Ó o pente! <br>';
+}
 
-$c1 = new Categoria();
 
-//var_dump($us1);
-var_dump($us2);
+
+
+
+// instantiate and use the dompdf class
+$dompdf = new Dompdf();
+$dompdf->loadHtml('<h1>Olá mundo, estou aprendendo PHP </h1>'.$html);
+// Render the HTML as PDF
+$dompdf->render();
+
+// Output the generated PDF to Browser
+$dompdf->stream();
+
 
